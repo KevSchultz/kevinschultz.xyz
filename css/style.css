@@ -1,0 +1,107 @@
+* {
+    /* Global Color Variables */
+    --textcolor: #1E90FF;
+    --bgcolor: #141414;
+    --highlight: #ff1e1e;
+    --terminal: #300a24;
+}
+
+body {
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--textcolor);
+    overflow: hidden;
+    background: var(--bgcolor);
+}
+
+nav {
+    font-size: 18px;
+    padding: 5vh 5vw 5vh 5vw;
+}
+
+/* ----- Links ------ */
+
+a {
+    font-size: 18px;
+    color: textcolor;
+}
+
+a:link {
+    color: var(--textcolor)
+}
+
+a:visited {
+    color : var(--textcolor)
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+/* ----- Image Effects ----- */
+
+nav a {
+    text-align: center;
+    padding: 0 2vw 0 2vw;
+}
+
+.button {
+    background-color: var(--terminal);
+    display: table-cell;
+    padding: 25px;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+
+}
+
+.button:hover {
+    font-size: 25px;
+}
+
+/* ----- Section ----- */
+
+section {
+    display: none;
+    height: 70vh;
+}
+
+section:target { /* Show section */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+section:target iframe {
+    visibility: visible;
+}
+
+/* ----- Terminal ----- */
+
+#terminal {
+    font-size: 18px;
+    padding: 1em;
+    color: white;
+    width: 600px;
+    background-color: var(--terminal);
+    border-style: solid;
+    align-self: center;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* ----- List Title ----- */
+.subSection {
+    width: 100%;
+    text-align: center;
+}
