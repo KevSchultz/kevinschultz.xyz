@@ -3,7 +3,7 @@
     <head>
         <meta name="description" content="Hello, my name is Kevin Schultz. I'm a computer science student at UCSC, and this is my personal webpage.">
         <meta name="author" content="Kevin Schultz">
-        <title>Kevin Schultz&#39;s Webpage</title>
+        <title>Kevin Schultz</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/terminal.js"></script>
         <script>
@@ -20,7 +20,7 @@
         <main>
 
             <!--Home Page-->
-            <section id="home" style="overflow: hidden">
+            <section id="home">
                 <canvas id="stars"></canvas>
                 <div class="flexContainer">
                     <div id="terminal"> 
@@ -90,31 +90,42 @@
 
             <!--Blender Page-->
             <section id="blenderSection">
-                <img src="images/Christmas_Cabin.png" height="250px">
-                <img src="images/candy.png" height="250px">
-                <img src="images/donut.png" height="250px">
+                <button class="button" onclick="previousImage()">&#8249;</button>
+                <div>
+                    <img id="blenderImage" src="images/0.png">
+                </div>
+                <button class="button" onclick="nextImage()">&#8250;</button>
 
-                <img src="images/hotel_lights.png" height="250px">
-                <img src="images/lp.png" height="250px">
-                <img src="images/space_tree.png" height="250px">
 
-                <img src="images/Schultz_Kevin_HW1.png" height="250px">
-                <img src="images/Schultz_Kevin_HW4.png" height="250px">
-                <img src="images/projections.png" height="250px">
 
-                <img src="images/pinkCircle.png" height="250px">
-                <img src="images/light.png" height="250px">
-                <img src="images/sink.gif" height="250px">
+                <!--
+<img src="images/Christmas_Cabin.png" height="250px">
+<img src="images/candy.png" height="250px">
+<img src="images/donut.png" height="250px">
 
-                <img src="images/hairyurinal.png" height="250px">
-                <img src="images/character.png" height="250px">
-                <img src="images/urinal.png" height="250px">
+<img src="images/hotel_lights.png" height="250px">
+<img src="images/lp.png" height="250px">
+<img src="images/space_tree.png" height="250px">
+
+<img src="images/Schultz_Kevin_HW1.png" height="250px">
+<img src="images/Schultz_Kevin_HW4.png" height="250px">
+<img src="images/projections.png" height="250px">
+
+<img src="images/pinkCircle.png" height="250px">
+<img src="images/light.png" height="250px">
+<img src="images/sink.gif" height="250px">
+
+<img src="images/hairyurinal.png" height="250px">
+<img src="images/character.png" height="250px">
+<img src="images/urinal.png" height="250px">
+-->
 
             </section>
 
         </main>
     </body>
     <script src="js/mainloop.js"></script>
+    <script src="js/viewer.js"></script>
     <script type="module" src="js/shapes.js"></script>
     <script type="module" src="js/stars.js"></script>
     <script type="module" src="js/birds.js"></script>

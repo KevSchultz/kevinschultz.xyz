@@ -1,6 +1,6 @@
 * {
     /* Global Color Variables */
-    --textcolor: #1E90FF;
+    --linkColor: #1E90FF;
     --bgcolor: #141414;
     --highlight: #ff1e1e;
     --terminal: #300a24;
@@ -9,9 +9,10 @@
 body {
     font-family: monospace;
     font-weight: bold;
-    color: var(--textcolor);
+    color: var(--linkColor);
     overflow: hidden;
     background: var(--bgcolor);
+    z-index: -2;
 }
 
 nav {
@@ -23,22 +24,20 @@ nav {
 
 a {
     font-size: 18px;
-    color: textcolor;
+    color: var(--linkColor);
 }
 
 a:link {
-    color: var(--textcolor)
+    color: var(--linkColor)
 }
 
 a:visited {
-    color : var(--textcolor)
+    color : var(--linkColor)
 }
 
 a:hover {
     color: var(--highlight);
 }
-
-/* ----- Image Effects ----- */
 
 nav a {
     text-align: center;
@@ -46,6 +45,8 @@ nav a {
 }
 
 .button {
+    font-size: 18px;
+    color: var(--linkColor);
     background-color: var(--terminal);
     display: table-cell;
     padding: 25px;
@@ -54,12 +55,14 @@ nav a {
     text-align: center;
     text-decoration: none;
     transition: 0.5s ease-in-out;
-
 }
 
 .button:hover {
     font-size: 25px;
+    color: var(--highlight);
 }
+
+
 
 /* ----- Section ----- */
 
@@ -105,3 +108,11 @@ canvas {
     width: 100%;
     text-align: center;
 }
+
+/* ----- Blender Image Viewer ----- */
+#blenderImage {
+    height: 50vh;
+    border-radius: 10px;
+    border: 5px solid var(--linkColor);
+}
+
