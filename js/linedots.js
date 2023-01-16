@@ -1,4 +1,5 @@
 import {line, circle} from "./shapes.js";
+import {distance} from "./utilities.js";
 
 const MAXRADIUS = 10;
 const MINRADIUS = 5;
@@ -37,12 +38,14 @@ Dot.prototype.draw = function(ctx, interpolationPercentage) {
 Dot.prototype.spawn = function(canvas) {
     this.x = Math.floor(Math.random() * canvas.width);
     this.y = Math.floor(Math.random() * canvas.height);
+    this.original_x = this.x;
+    this.original_y = this.y
     this.r = MINRADIUS;
     this.t = 0;
-    this.dx = Math.floor(Math.random() * 5) + Math.floor(Math.random() * -5);
-    this.dy = Math.floor(Math.random() * 5) + Math.floor(Math.random() * -5);
+    this.dx = 0;
+    this.dy = 0;
     this.dr = 0;
-    this.dt = 0.1;
+    this.dt = 0.01;
 };
 
 
@@ -65,23 +68,37 @@ function LineDotSystem(canvas, fps, n, connections) {
             arr.push(Math.floor(Math.random() * this.n));
         }
         this.lines.push(arr);
-        console.log(arr);
     }
-    console.log(this.dots);
     this.resize();
-
+    this.average_x = this.canvas.width / 2;
+    this.average_y = this.canvas.height / 2;
 }
 
 LineDotSystem.prototype.update = function(delta) {
+    //    [this.average_x, this.average_y] = this.average_location();
     for (let dot of this.dots) {
-        dot.update(delta / (1000 / this.fps));
-        if (dot.x > this.canvas.width || dot.x < 0) {
-            dot.spawn(this.canvas);
+        let d = distance(dot.x, dot.y, this.average_x, this.average_y);
+
+        if (dot.x < this.average_x) {
+            dot.x = Math.sin(dot.t) * -d + this.average_x;
+        } else {
+            dot.x = Math.sin(dot.t) * d + this.average_x;
         }
 
-        if (dot.y > this.canvas.height || dot.y < 0) {
-            dot.spawn(this.canvas);
+        if (dot.y < this.average_y) {
+            dot.y = Math.cos(dot.t) * -d + this.average_y;
+        } else {
+            dot.y = Math.cos(dot.t) * d + this.average_y;
         }
+
+        dot.update(delta / (1000 / this.fps));
+        //        if (dot.x > this.canvas.width || dot.x < 0) {
+        //            dot.spawn(this.canvas);
+        //        }
+        //
+        //        if (dot.y > this.canvas.height || dot.y < 0) {
+        //            dot.spawn(this.canvas);
+        //        }
     }
 };
 
@@ -107,7 +124,15 @@ LineDotSystem.prototype.restart = function() {
 LineDotSystem.prototype.resize = function() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
+    this.average_x = this.canvas.width / 2;
+    this.average_y = this.canvas.height / 2;
     this.restart();
 };
+
+LineDotSystem.prototype.average_location = function() {
+    let x = this.dots.reduce((accumulator, dot) => accumulator + dot.x, 0) / this.dots.length;
+    let y = this.dots.reduce((accumulator, dot) => accumulator + dot.y, 0) / this.dots.length;
+    return [x, y];
+}
 
 export {LineDotSystem};

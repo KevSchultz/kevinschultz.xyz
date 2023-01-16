@@ -10,7 +10,7 @@ const FPS = 60;
 var starsystem = new StarSystem(document.getElementById("stars"), FPS, N);
 var birdsystem = new BirdSystem(document.getElementById("birds"), FPS, 50);
 var rainsystem = new RainSystem(document.getElementById("rains"), FPS, 100);
-var linedotsystem = new LineDotSystem(document.getElementById("linedots"), FPS, 10, 1);
+var linedotsystem = new LineDotSystem(document.getElementById("linedots"), FPS, 1000, 1);
 
 
 function current(sectionID) {
