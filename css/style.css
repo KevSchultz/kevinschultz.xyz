@@ -50,18 +50,16 @@ nav a {
     background-color: var(--terminal);
     display: table-cell;
     padding: 25px;
-    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    transition: 0.5s ease-in-out;
 }
 
 .button:hover {
-    font-size: 25px;
     color: var(--highlight);
 }
-
 
 
 /* ----- Section ----- */
@@ -110,9 +108,32 @@ canvas {
 }
 
 /* ----- Blender Image Viewer ----- */
+
 #blenderImage {
     height: 50vh;
     border-radius: 10px;
     border: 5px solid var(--linkColor);
 }
 
+/* ----- Link Button Containers and Menu ----- */
+
+.menu {
+    width: 50vw;
+    border-style: solid;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.linkContainer{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#links {
+        align-items: start;
+}
+
+h1 {
+    padding-left: 20px;
+}
