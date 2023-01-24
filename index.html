@@ -65,6 +65,7 @@
                         <a class="button" href="#birdSection">Birds</a>
                         <a class="button" href="#rainSection">Rain</a>  
                         <a class="button" href="#linedotSection">LineDots</a>
+                        <a class="button" href="#wolframcellularSection">WolframCellular</a>
                     </div>
 
                     <h1>Other</h1>
@@ -92,6 +93,81 @@
 
             <section id="linedotSection">
                 <canvas id="linedots"></canvas>
+            </section>
+
+            <section id="wolframcellularSection">
+                <div style="display: flex;">
+                    <canvas id="wolframcellular"></canvas>
+                    <div>
+                        <div id="wolframRule7" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                            </div>
+                            <div id="wolframOutput7" class="wolframDisplaySquare" style="background: black;"></div>
+                        </div>
+                        <div id="wolframRule6" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                            </div>
+                            <div id="wolframOutput6" class="wolframDisplaySquare" style="background: white;"></div>
+                        </div>
+                        <div id="wolframRule5" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                            </div>
+                            <div id="wolframOutput5" class="wolframDisplaySquare" style="background: black;"></div>
+                        </div>
+                        <div id="wolframRule4" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                            </div>
+                            <div id="wolframOutput4" class="wolframDisplaySquare" style="background: white;"></div>
+                        </div>
+                        <div id="wolframRule3" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                            </div>
+                            <div id="wolframOutput3" class="wolframDisplaySquare" style="background: white;"></div>
+                        </div>
+                        <div id="wolframRule2" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                            </div>
+                            <div id="wolframOutput2" class="wolframDisplaySquare" style="background: black;"></div>
+                        </div>
+                        <div id="wolframRule1" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: white"></div>
+                            </div>
+                            <div id="wolframOutput1" class="wolframDisplaySquare" style="background: white;"></div>
+                        </div>
+                        <div id="wolframRule0" class="wolframbutton">
+                            <div style="display: flex;">
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                                <div class="wolframDisplaySquare" style="background: black"></div>
+                            </div>
+                            <div id="wolframOutput0" class="wolframDisplaySquare" style="background: black;"></div>
+                        </div>
+                        <h2 id="wolframRuleOutput">Rule: 90</h2>
+
+                    </div>
+                </div>
+
             </section>
 
             <!--Blender Page-->
@@ -137,6 +213,7 @@
     <script type="module" src="js/stars.js"></script>
     <script type="module" src="js/birds.js"></script>
     <script type="module" src="js/rains.js"></script>
+    <script type="module" src="js/wolframcellular.js"></script>
     <script type="module" src="js/linedots.js"></script>
     <script type="module" src="js/animation.js"></script>
 </html>

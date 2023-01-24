@@ -78,17 +78,20 @@ LineDotSystem.prototype.update = function(delta) {
     //    [this.average_x, this.average_y] = this.average_location();
     for (let dot of this.dots) {
         let d = distance(dot.x, dot.y, this.average_x, this.average_y);
+        if (dot.t > 3.14) {
+            dot.t = 0;
+        }
 
         if (dot.x < this.average_x) {
-            dot.x = Math.sin(dot.t) * -d + this.average_x;
+            dot.x = Math.cos(dot.t) * -d + this.average_x;
         } else {
-            dot.x = Math.sin(dot.t) * d + this.average_x;
+            dot.x = Math.cos(dot.t) * d + this.average_x;
         }
 
         if (dot.y < this.average_y) {
-            dot.y = Math.cos(dot.t) * -d + this.average_y;
+            dot.y = Math.sin(dot.t) * -d + this.average_y;
         } else {
-            dot.y = Math.cos(dot.t) * d + this.average_y;
+            dot.y = Math.sin(dot.t) * d + this.average_y;
         }
 
         dot.update(delta / (1000 / this.fps));

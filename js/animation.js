@@ -2,6 +2,7 @@ import {StarSystem} from "./stars.js";
 import {BirdSystem} from "./birds.js";
 import {RainSystem} from "./rains.js";
 import {LineDotSystem} from "./linedots.js"
+import {WolframCellular} from "./wolframcellular.js";
 
 const N = 500;
 const FPS = 60;
@@ -12,6 +13,19 @@ var birdsystem = new BirdSystem(document.getElementById("birds"), FPS, 50);
 var rainsystem = new RainSystem(document.getElementById("rains"), FPS, 100);
 var linedotsystem = new LineDotSystem(document.getElementById("linedots"), FPS, 1000, 1);
 
+var wolframcellular = new WolframCellular(document.getElementById("wolframcellular"), 90);
+
+for (let i = 0; i <= 7; i++) { 
+    document.getElementById("wolframRule" + i).addEventListener('click', (event) => {
+        if (document.getElementById("wolframOutput" + i).style.background == "white") {
+            document.getElementById("wolframOutput" + i).style.background = "black";
+            wolframcellular.flipRule("0", i);
+        } else {
+            document.getElementById("wolframOutput" + i).style.background = "white";
+            wolframcellular.flipRule("1", i);
+        }
+    });
+}
 
 function current(sectionID) {
     return window.getComputedStyle(document.getElementById(sectionID)).display == "flex";
@@ -57,3 +71,5 @@ addEventListener('resize', (event) => {
 });
 
 MainLoop.setUpdate(update).setDraw(draw).setMaxAllowedFPS(FPS).start();
+
+setInterval(function() {wolframcellular.update(); wolframcellular.draw();}, 1);

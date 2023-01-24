@@ -10,7 +10,6 @@ body {
     font-family: monospace;
     font-weight: bold;
     color: var(--linkColor);
-    overflow: hidden;
     background: var(--bgcolor);
     z-index: -2;
 }
@@ -136,4 +135,47 @@ canvas {
 
 h1 {
     padding-left: 20px;
+}
+
+
+/* ----- Wolfram Cellular ----- */
+
+.wolframbutton {
+    border: solid;
+    border-color: var(--linkColor);
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wolframbutton:hover {
+    border-color: var(--highlight);
+}
+
+.wolframDisplaySquare {
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    margin: 1px;
+    border-color: var(--linkColor);
+    width: 20px;
+    height: 20px;
+}
+
+#wolframcellular {  
+    position: static;
+    border: solid;
+    width: 800px;
+    height: 800px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 10px;
+    width: 100px;
 }
