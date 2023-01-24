@@ -118,6 +118,7 @@ canvas {
 
 .menu {
     width: 50vw;
+    min-width: 600px;
     border-style: solid;
     border-radius: 10px;
     padding-bottom: 20px;
