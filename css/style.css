@@ -19,6 +19,22 @@ nav {
     padding: 5vh 5vw 5vh 5vw;
 }
 
+.icons {
+    display: flex;
+    position: absolute;
+    top: 90%;
+}
+
+.icon {
+    width: 50px;
+    fill: var(--linkColor);
+    margin: 10px;
+}
+
+.icon:hover {
+    fill: var(--highlight);
+}
+
 /* ----- Links ------ */
 
 a {
