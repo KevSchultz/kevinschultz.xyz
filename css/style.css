@@ -106,7 +106,7 @@ canvas {
     text-align: center;
 }
 
-/* ----- Blender Image Viewer ----- */
+/* ----- Blender ----- */
 
 #blenderImage {
     height: 50vh;
@@ -114,11 +114,9 @@ canvas {
     border: 5px solid var(--linkColor);
 }
 
-/* ----- Link Button Containers and Menu ----- */
+/* ----- Links ----- */
 
 .menu {
-    width: 50vw;
-    min-width: 600px;
     border-style: solid;
     border-radius: 10px;
     padding-bottom: 20px;
@@ -131,12 +129,40 @@ canvas {
 }
 
 #links {
-        align-items: start;
+    align-items: start;
 }
 
 h1 {
     padding-left: 20px;
 }
+
+/* ----- Projects ----- */
+
+#projects {
+    align-items: start; 
+}
+
+.projectContainer {
+    width: 50vw;
+    min-width: fit-content;
+    margin: 10px;
+    display: flex;
+    border: solid;
+    border-radius: 10px;
+}
+
+.projectImage {
+    width: 300px;
+    border-right: solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.projectDescription {
+    margin: 10px;
+    min-width: 50vw;
+}
+
 
 
 /* ----- Wolfram Cellular ----- */
