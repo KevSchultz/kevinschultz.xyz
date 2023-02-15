@@ -1,3 +1,4 @@
+/* ---- All Sections ----- */
 * {
     /* Global Color Variables */
     --linkColor: #1E90FF;
@@ -14,29 +15,13 @@ body {
     z-index: -2;
 }
 
+/* Nav Bar */
 nav {
     font-size: 18px;
     padding: 5vh 5vw 5vh 5vw;
 }
 
-.icons {
-    display: flex;
-    position: absolute;
-    top: 90%;
-}
-
-.icon {
-    width: 50px;
-    fill: var(--linkColor);
-    margin: 10px;
-}
-
-.icon:hover {
-    fill: var(--highlight);
-}
-
-/* ----- Links ------ */
-
+/* Links */
 a {
     font-size: 18px;
     color: var(--linkColor);
@@ -59,6 +44,7 @@ nav a {
     padding: 0 2vw 0 2vw;
 }
 
+/* Link Buttons */
 .button {
     font-size: 18px;
     color: var(--linkColor);
@@ -76,9 +62,7 @@ nav a {
     color: var(--highlight);
 }
 
-
-/* ----- Section ----- */
-
+/* Switching pages with sections hiding */
 section {
     display: none;
     height: 70vh;
@@ -91,22 +75,9 @@ section:target { /* Show section */
     justify-content: center;
     align-items: center;
 }
-}
 
 section:target iframe {
     visibility: visible;
-}
-
-/* ----- Terminal ----- */
-
-#terminal {
-    font-size: 18px;
-    padding: 1em;
-    color: white;
-    width: 600px;
-    background-color: var(--terminal);
-    border-style: solid;
-    align-self: center;
 }
 
 canvas {
@@ -116,22 +87,57 @@ canvas {
     z-index: -1;
 }
 
-/* ----- List Title ----- */
-.subSection {
-    width: 100%;
-    text-align: center;
+h1 {
+    padding-left: 20px;
 }
 
-/* ----- Blender ----- */
+h2 {
+    margin: 10px;
+    width: 100px;
+}
+/* ----- End All Sections ----- */
 
+/* ----- Home Section ----- */
+#home {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.icons {
+    display: flex;
+}
+
+.icon {
+    width: 50px;
+    fill: var(--linkColor);
+    margin: 10px;
+}
+
+.icon:hover {
+    fill: var(--highlight);
+}
+
+#terminal {
+    font-size: 18px;
+    padding: 1em;
+    color: white;
+    width: 600px;
+    background-color: var(--terminal);
+    border-style: solid;
+    border-radius: 10px;
+    align-self: center;
+}
+/* ----- End Home Section ----- */
+
+/* ----- Blender ----- */
 #blenderImage {
     height: 50vh;
     border-radius: 10px;
     border: 5px solid var(--linkColor);
 }
+/* ----- End Blender Section ----- */
 
-/* ----- Links ----- */
-
+/* ----- Links Section ----- */
 .menu {
     border-style: solid;
     border-radius: 10px;
@@ -147,13 +153,9 @@ canvas {
 #links {
     align-items: start;
 }
+/* ----- End Links Section ----- */
 
-h1 {
-    padding-left: 20px;
-}
-
-/* ----- Projects ----- */
-
+/* ----- Projects Section ----- */
 #projects {
     align-items: start; 
 }
@@ -165,6 +167,7 @@ h1 {
     display: flex;
     border: solid;
     border-radius: 10px;
+    background: var(--terminal);
 }
 
 .projectImage {
@@ -177,12 +180,12 @@ h1 {
 .projectDescription {
     margin: 10px;
     min-width: 50vw;
+    color: white;
 }
+/* ----- End Projects Section ----- */
 
 
-
-/* ----- Wolfram Cellular ----- */
-
+/* ----- WolframCellular Section ----- */
 .wolframbutton {
     border: solid;
     border-color: var(--linkColor);
@@ -217,8 +220,4 @@ h1 {
     height: 800px;
     border-radius: 10px;
 }
-
-h2 {
-    margin: 10px;
-    width: 100px;
-}
+/* ----- End WolframCellular Section ----- */

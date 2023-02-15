@@ -35,3 +35,12 @@ export function line(ctx, x1, y1, x2, y2, lineWidth, color) {
     ctx.lineTo(x2, y2);
     ctx.stroke();
 }
+
+export function angleLine(ctx, x, y, angle, length, lineWidth, color) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + length * Math.cos(angle), y + length * Math.sin(angle));
+    ctx.stroke();
+}

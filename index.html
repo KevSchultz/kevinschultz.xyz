@@ -5,10 +5,11 @@
         <meta name="author" content="Kevin Schultz">
         <title>Kevin Schultz</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <script src="js/terminal.js"></script>
         <script>
-            /* Set default css target to home */
-            window.location.href = "/index.html#home";
+            //            /* Set default css target to home */
+            //            window.location.href = "/index.html#home";
         </script>
     </head>
     <body>
@@ -26,8 +27,11 @@
                     <div id="terminal"> 
                         <span style="color:lawngreen">kevin@website:~$</span>
                         <span>
-                            cat me.txt<br>
-                            <pre>
+                            <a href="#home" onclick="changeTerminal('welcome');">Welcome</a>
+                            <a href="#home" onclick="changeTerminal('about');">About</a>
+                            <a href="https://drive.google.com/file/d/1M-u1I940SzR4AyZxSGxy5DOe6iJnwZcl/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+                            <pre id="terminalText">
+
  #############
 ##          #
 #  _\_   _\_
@@ -41,12 +45,6 @@
     \____/
                         </pre>
                         </span>
-                        <!--
-<span> Number of Stars: </span>
-<div class="slidecontainer">
-<input type="range" min="1" max="1000" value="500" class="slider" id="myRange">
-</div>
--->            
                     </div>
                 </div>
                 <div class="icons">
@@ -60,6 +58,9 @@
                     <a href="https://www.linkedin.com/in/kevin-schultz-356371263/" target="_blank" rel="noopener noreferrer">
                         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
+                    <a href="mailto:ksschultz02@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                    </a>
                 </div>
             </section>
 
@@ -72,6 +73,8 @@
                         <a class="button" href="#rainSection">Rain</a>  
                         <a class="button" href="#linedotSection">LineDots</a>
                         <a class="button" href="#wolframcellularSection">WolframCellular</a>
+                        <a class="button" href="#treeSection">FractalTree</a>
+                        <a class="button" href="#cubeSection">Cubes</a>
                     </div>
 
                     <h1>Other</h1>
@@ -105,6 +108,12 @@
 
             <section id="linedotSection">
                 <canvas id="linedots"></canvas>
+                <div style="display: flex;  flex-direction: column; justify-content: center;">
+                    <div style="height: 70vh;"></div>
+                    <div style="background-color: white; border-radius: 10px;">
+                        <input id="lineDotsSlider" type="range" min="0" max="100" value="100">
+                    </div>
+                </div>
             </section>
 
             <section id="wolframcellularSection">
@@ -176,10 +185,8 @@
                             <div id="wolframOutput0" class="wolframDisplaySquare" style="background: black;"></div>
                         </div>
                         <h2 id="wolframRuleOutput">Rule: 90</h2>
-
                     </div>
                 </div>
-
             </section>
 
             <!--Blender Page-->
@@ -189,37 +196,20 @@
                     <img id="blenderImage" src="images/0.png">
                 </div>
                 <button class="button" onclick="nextImage()">&#8250;</button>
-
-
-
-                <!--
-<img src="images/Christmas_Cabin.png" height="250px">
-<img src="images/candy.png" height="250px">
-<img src="images/donut.png" height="250px">
-
-<img src="images/hotel_lights.png" height="250px">
-<img src="images/lp.png" height="250px">
-<img src="images/space_tree.png" height="250px">
-
-<img src="images/Schultz_Kevin_HW1.png" height="250px">
-<img src="images/Schultz_Kevin_HW4.png" height="250px">
-<img src="images/projections.png" height="250px">
-
-<img src="images/pinkCircle.png" height="250px">
-<img src="images/light.png" height="250px">
-<img src="images/sink.gif" height="250px">
-
-<img src="images/hairyurinal.png" height="250px">
-<img src="images/character.png" height="250px">
-<img src="images/urinal.png" height="250px">
--->
-
             </section>
 
+            <section id="treeSection">
+                <canvas id="tree"></canvas>
+            </section>
+
+            <section id="cubeSection">
+                <canvas id="cube"></canvas>
+            </section>
         </main>
     </body>
     <script src="js/mainloop.js"></script>
     <script src="js/viewer.js"></script>
+    <script type="module" src="js/tree.js"></script>
     <script type="module" src="js/shapes.js"></script>
     <script type="module" src="js/utilities.js"></script>
     <script type="module" src="js/stars.js"></script>
@@ -228,4 +218,7 @@
     <script type="module" src="js/wolframcellular.js"></script>
     <script type="module" src="js/linedots.js"></script>
     <script type="module" src="js/animation.js"></script>
+    <script type="module" src="js/matrix.js"></script>
+    <script type="module" src="js/point3d.js"></script>
+    <script type="module" src="js/cube.js"></script>
 </html>

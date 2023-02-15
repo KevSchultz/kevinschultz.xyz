@@ -5,7 +5,6 @@ const SIZE = 5;
 
 function Rain(x, y, dy, ddy, size) {
     this.x = x;
-    console.log(x);
     this.y = y;
     this.lastY = this.y;
     this.dy = dy;
@@ -41,7 +40,6 @@ function RainSystem(canvas, fps, n) {
     
     for (let i = 0; i < n; i++) {
         this.rains.push(new Rain(Math.floor(Math.random() * this.canvas.width), 0, 0, Math.random() / 5, SIZE));
-        console.log(Math.floor(Math.random() * this.canvas.width));
     }
 }
 
