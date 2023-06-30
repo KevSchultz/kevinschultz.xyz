@@ -9,14 +9,19 @@
         <script src="js/terminal.js"></script>
         <script>
             /* Set default css target to home */
-            window.location.href = "/index.html#home";
+            console.log(window.location.href);
+            if (!window.location.href.includes("#")) {
+                window.location.href = "/index.html#home";
+            }
         </script>
     </head>
     <body>
         <nav>
-            <a href="#home">Kevin Schultz</a>
-            <a style="float:right" href="#links">Links</a>
-            <a style="float:right" href="#projects">Projects</a>
+            <a style="flex-grow: 8;"href="#home">Kevin Schultz</a>
+            <div style="flex-grow: 2; text-align: right;"> 
+                <a href="#links">Links</a>
+                <a href="#projects">Projects</a>
+            </div>
         </nav>
         <main>
 
@@ -200,10 +205,31 @@
 
             <section id="treeSection">
                 <canvas id="tree"></canvas>
+                <div class="wrapper">
+                    <div id="treeSidebar" class="sidebar">
+                        <div>
+                            <button class="close-button">&times;</button>
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <a style="font-size: 50px; padding-left: 2vw;">&rarr;</a>
+                    </div>
+                </div>
             </section>
 
             <section id="cubeSection">
                 <canvas id="cube"></canvas>
+            </section>
+            
+            <section id="smileSection">
+                <canvas id="smile"></canvas>
+                <div class="flexContainer">
+                    <div id="smileterminal"> 
+                        <span style="color:lawngreen">Dear Smarana Smiles Abbadasari,</span>
+                        <div>Happy 21st Birthday! You've officially completed 21 trips around the sun. I've only know you for a couple of those trips, but in that time you've managed to shift my perspective on life. You have a passion that amazes me, and 
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
@@ -221,4 +247,5 @@
     <script type="module" src="js/matrix.js"></script>
     <script type="module" src="js/point3d.js"></script>
     <script type="module" src="js/cube.js"></script>
+    <script type="module" src="js/smile.js"></script>
 </html>

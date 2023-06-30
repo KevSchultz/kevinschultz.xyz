@@ -5,6 +5,7 @@ import {LineDotSystem} from "./linedots.js"
 import {WolframCellular} from "./wolframcellular.js";
 import {TreeSystem} from "./tree.js";
 import {CubeSystem} from "./cube.js";
+import {SmileSystem} from "./smile.js"
 
 const N = 500;
 const FPS = 60;
@@ -13,6 +14,7 @@ const FPS = 60;
 var starsystem = new StarSystem(document.getElementById("stars"), FPS, N);
 var birdsystem = new BirdSystem(document.getElementById("birds"), FPS, 50);
 var rainsystem = new RainSystem(document.getElementById("rains"), FPS, 100);
+var smilesystem = new SmileSystem(document.getElementById("smile"), FPS, 7670);
 var linedotsystem = new LineDotSystem(document.getElementById("linedots"), FPS, 50, 1);
 var treesystem = new TreeSystem(document.getElementById("tree"));
 var cubesystem = new CubeSystem(document.getElementById("cube"), FPS);
@@ -50,6 +52,10 @@ function update(delta) {
         linedotsystem.update();
     } else if (current("cubeSection")) {
         cubesystem.update();
+    } else if (current("treeSection")) {
+        treesystem.update();
+    } else if (current("smileSection")) {
+        smilesystem.update();
     }
 }
 
@@ -64,6 +70,10 @@ function draw(interpolationPercentage) {
         linedotsystem.draw();
     } else if (current("cubeSection")) {
         cubesystem.draw();
+    } else if (current("treeSection")) {
+        treesystem.draw();
+    } else if (current("smileSection")) {
+        smilesystem.draw(interpolationPercentage);
     }
 }
 
@@ -81,9 +91,9 @@ addEventListener('resize', (event) => {
     rainsystem.resize();
     linedotsystem.resize();
     cubesystem.resize();
+    treesystem.resize();
 });
 
 MainLoop.setUpdate(update).setDraw(draw).setMaxAllowedFPS(FPS).start();
 
 setInterval(function() {wolframcellular.update(); wolframcellular.draw();}, 1);
-setInterval(function() {treesystem.update(); treesystem.draw();}, 1);

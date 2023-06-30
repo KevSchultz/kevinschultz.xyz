@@ -156,7 +156,6 @@ LineDotSystem.prototype.findClosest = function(dot) {
             closestDistance = this.dots[i].getDistance(dot);
         }
     }
-    console.log(closest);
     return closest;
 }
 

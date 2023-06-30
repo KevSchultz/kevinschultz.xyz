@@ -11,3 +11,13 @@ function nextImage(){
     current_image_index = (current_image_index == images.length - 1) ? 0: current_image_index + 1;
     document.getElementById("blenderImage").src = "images/" + images[current_image_index];
 }
+
+var arrow = document.querySelector(".arrow");
+arrow.addEventListener("click", function(){
+    document.querySelector("body").classList.toggle("close");
+});
+
+var close = document.querySelector(".close-button");
+close.addEventListener("click", function(){
+    document.querySelector("body").classList.toggle("close");
+});
