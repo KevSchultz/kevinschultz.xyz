@@ -302,12 +302,11 @@ body.close .wrapper .sidebar .close-button {
 
 /* ----- Smile Section ------ */
 #smileterminal {
-    height: 250px;
     font-size: 18px;
     padding: 1em;
     color: white;
     width: 600px;
-    background-color: rgba(18, 118, 130, .95);
+    background-color: rgba(18, 118, 130, .99);
     border-style: solid;
     border-radius: 10px;
     align-self: center;

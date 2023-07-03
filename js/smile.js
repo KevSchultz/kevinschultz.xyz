@@ -18,28 +18,28 @@ Smile.prototype.update = function(canvas) {
     this.x += this.dx;
     
     if (this.y > canvas.height) {
-        this.dy *= -0.3;
+        this.dy *= -1;
         this.y = canvas.height - 1;
     }
 
     if (this.y < 0) {
-        this.dy *= -0.4;
+        this.dy *= -1;
         this.y = 1;
     }
 
     if (this.x > canvas.width) {
-        this.dx *= -0.7;
+        this.dx *= -1;
         this.x = canvas.width - 1;
     }
 
     if (this.x < 0) {
-        this.dx *= -0.7;
+        this.dx *= -1;
         this.x = 1;
     }
 };
 
 Smile.prototype.draw = function(ctx) {
-    drawText(ctx, this.x, this.y, "15px Arial", COLOR, "☻")
+    drawText(ctx, this.x, this.y, "15px Arial", COLOR, "☺")
 //    drawSmile(ctx, this.x, this.y, 5);
 };
 
@@ -53,7 +53,7 @@ function SmileSystem(canvas, fps, n) {
     this.Smiles = [];    
     
     for (let i = 0; i < n; i++) {
-        this.Smiles.push(new Smile(Math.floor(Math.random() * this.canvas.width), 0, Math.random() * 3 + Math.random() * -3, Math.random() * 7, 0, SIZE));
+        this.Smiles.push(new Smile(Math.floor(Math.random() * this.canvas.width), 0, Math.random() - Math.random(), Math.random() - Math.random(), 0, SIZE));
     }
 }
 

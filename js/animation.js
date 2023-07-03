@@ -92,6 +92,7 @@ addEventListener('resize', (event) => {
     linedotsystem.resize();
     cubesystem.resize();
     treesystem.resize();
+    smilesystem.resize();
 });
 
 MainLoop.setUpdate(update).setDraw(draw).setMaxAllowedFPS(FPS).start();
