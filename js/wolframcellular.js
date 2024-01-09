@@ -1,4 +1,4 @@
-import {rectangle} from "./shapes.js";
+import { rectangle } from "./shapes.js";
 
 function WolframCellular(canvas, rule, width, height, rows, columns) {
     if (rule < 0 || rule > 255 || !Number.isInteger(rule)) {
@@ -16,17 +16,22 @@ function WolframCellular(canvas, rule, width, height, rows, columns) {
     this.columns = columns;
 
     this.step = new Array(this.columns).fill('0');
-    this.step[Math.floor(this.columns / 2)] = '1'; 
+    this.step[Math.floor(this.columns / 2)] = '1';
     this.current_row = 0;
     this.rule = Array.from(rule.toString(2).padStart(8, '0'));
 }
 
-WolframCellular.prototype.update = function() {
+WolframCellular.prototype.update = function () {
     this.rule = this.getRule();
+
+    let decimal_rule = this.rule.reduce((acc, val, index) =>
+        acc + val * Math.pow(2, this.rule.length - 1 - index), 0);
+
+    document.getElementById("wolframRuleOutput").innerHTML = "Rule: " + String(decimal_rule);
     let new_step = new Array(this.columns).fill('0');
     for (let i = 1; i < this.columns - 1; i++) {
         let code = parseInt(this.step[i - 1] + this.step[i] + this.step[i + 1], 2);
-        if (this.rule[7 -  code] == '1') {
+        if (this.rule[7 - code] == '1') {
             new_step[i] = '1';
         }
     }
@@ -34,7 +39,7 @@ WolframCellular.prototype.update = function() {
     this.current_row = (this.current_row + 1) % this.rows; // start again at 0th row.
 };
 
-WolframCellular.prototype.draw = function() {
+WolframCellular.prototype.draw = function () {
     if (this.current_row == 0) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
@@ -48,16 +53,16 @@ WolframCellular.prototype.draw = function() {
     }
 };
 
-WolframCellular.prototype.restart = function(rule) {
+WolframCellular.prototype.restart = function (rule) {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.step = new Array(this.columns).fill('0');
-    this.step[Math.floor(this.columns / 2)] = '1'; 
+    this.step[Math.floor(this.columns / 2)] = '1';
     this.current_row = 0;
     this.rule = rule.toString(2).padStart(8, '0');
-}; 
+};
 
 
-WolframCellular.prototype.getRule = function() {
+WolframCellular.prototype.getRule = function () {
     let rule = "";
     for (let i = 7; i >= 0; i--) {
         if (document.getElementById("wolframOutput" + i).style.background == "white") {
@@ -70,4 +75,4 @@ WolframCellular.prototype.getRule = function() {
 };
 
 
-export {WolframCellular};
+export { WolframCellular };
